@@ -1,0 +1,630 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #080b12;
+    --card: rgba(17, 22, 34, 0.78);
+    --border: rgba(255, 255, 255, 0.09);
+    --text: #f5f7fb;
+    --muted: #9299a8;
+    --accent: #7c5cff;
+    --accent-light: #9b83ff;
+    --danger: #ff6b81;
+    --success: #48d597;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(124, 92, 255, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(72, 213, 151, 0.08),
+            transparent 30%
+        ),
+        var(--bg);
+    padding: 40px 24px;
+}
+
+
+/* =========================
+   MAIN APP
+========================= */
+
+.app {
+    width: min(1150px, 100%);
+    margin: 0 auto;
+}
+
+
+/* =========================
+   BRAND
+========================= */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    margin-bottom: 70px;
+}
+
+.brand-icon {
+    color: var(--accent-light);
+    font-size: 14px;
+}
+
+
+/* =========================
+   AUTH HEADER
+========================= */
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.eyebrow {
+    color: var(--accent-light);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.auth-header h1 {
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.05;
+    margin-bottom: 16px;
+}
+
+.auth-header > p:last-child {
+    color: var(--muted);
+    font-size: 16px;
+}
+
+
+/* =========================
+   AUTH SECTION
+========================= */
+
+.auth-section {
+    position: relative;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+
+    padding: 32px;
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+    margin-bottom: 24px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(124, 92, 255, 0.3);
+}
+
+.card h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.card-description {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 28px;
+}
+
+
+/* =========================
+   FORMS
+========================= */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    color: #cdd2dd;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+input {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid var(--border);
+    border-radius: 11px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+input::placeholder {
+    color: #646b7a;
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(124, 92, 255, 0.12);
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+    border: none;
+    border-radius: 11px;
+
+    padding: 14px 18px;
+
+    margin-top: 14px;
+
+    color: white;
+    background: linear-gradient(
+        135deg,
+        var(--accent),
+        var(--accent-light)
+    );
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(124, 92, 255, 0.28);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile-section {
+    margin-top: 55px;
+}
+
+.profile-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+
+    padding: 32px;
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+.profile-top {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.avatar {
+    width: 58px;
+    height: 58px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 16px;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    background: linear-gradient(
+        135deg,
+        var(--accent),
+        var(--accent-light)
+    );
+
+    box-shadow:
+        0 10px 30px rgba(124, 92, 255, 0.25);
+}
+
+.profile-top h2 {
+    font-size: 24px;
+}
+
+.profile-description {
+    color: var(--muted);
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.profile-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.profile-actions button {
+    margin-top: 0;
+}
+
+#logoutButton {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border);
+}
+
+#logoutButton:hover {
+    background: rgba(255, 255, 255, 0.13);
+    box-shadow: none;
+}
+
+#profileResult {
+    margin-top: 24px;
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    color: #cdd2dd;
+
+    font-family: monospace;
+    font-size: 13px;
+
+    white-space: pre-wrap;
+
+    overflow-x: auto;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (min-width: 850px) {
+
+    .auth-section {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 24px;
+    }
+
+    .auth-header {
+        grid-column: 1 / -1;
+    }
+
+    .card {
+        margin-bottom: 0;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 25px 15px;
+    }
+
+    .brand {
+        margin-bottom: 45px;
+    }
+
+    .card,
+    .profile-card {
+        padding: 24px;
+        border-radius: 18px;
+    }
+
+    .auth-header h1 {
+        font-size: 38px;
+    }
+
+    .profile-actions {
+        flex-direction: column;
+    }
+}
+
+/* =========================
+   PROFILE DETAILS
+========================= */
+
+.profile-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+
+    margin-top: 28px;
+}
+
+.profile-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    padding: 18px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.field-label {
+    color: var(--muted);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.field-value {
+    color: var(--text);
+
+    font-size: 15px;
+    font-weight: 600;
+
+    word-break: break-word;
+}
+
+
+/* =========================
+   SESSION STATUS
+========================= */
+
+.session-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 18px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: var(--success);
+
+    box-shadow:
+        0 0 12px rgba(72, 213, 151, 0.6);
+}
+
+
+@media (max-width: 600px) {
+
+    .profile-details {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================
+   PASSWORD TOGGLE
+========================= */
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    padding-right: 50px;
+}
+
+.password-toggle {
+    position: absolute;
+
+    right: 10px;
+    top: 50%;
+
+    width: 34px;
+    height: 34px;
+
+    padding: 0;
+    margin: 0;
+
+    transform: translateY(-50%);
+
+    display: grid;
+    place-items: center;
+
+    background: transparent;
+    border: none;
+
+    box-shadow: none;
+
+    cursor: pointer;
+}
+
+.password-toggle:hover {
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: none;
+}
+
+
+/* Eye */
+
+.eye-icon {
+    position: relative;
+
+    width: 18px;
+    height: 12px;
+
+    border: 1.8px solid var(--muted);
+
+    border-radius: 75% 15%;
+
+    transform: rotate(45deg);
+
+    transition: 0.2s ease;
+}
+
+
+/* Eye pupil */
+
+.eye-icon::after {
+    content: "";
+
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    top: 2px;
+    left: 5px;
+
+    border-radius: 50%;
+
+    background: var(--muted);
+
+    transform: rotate(-45deg);
+}
+
+
+/* Slash when password is hidden */
+
+.eye-icon::before {
+    content: "";
+
+    position: absolute;
+
+    width: 24px;
+    height: 2px;
+
+    top: 4px;
+    left: -4px;
+
+    background: var(--muted);
+
+    transform: rotate(-45deg);
+
+    transition: 0.2s ease;
+
+    z-index: 2;
+}
+
+
+/* Visible state */
+
+.eye-icon.visible::before {
+    opacity: 0;
+}
+
+.eye-icon.visible {
+    border-color: var(--accent-light);
+}
+
+.eye-icon.visible::after {
+    background: var(--accent-light);
+}
+
+.eye-icon {
+    pointer-events: none;
+}
+
+button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+button:disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* =========================
+   FORM MESSAGES
+========================= */
+
+.message {
+    min-height: 20px;
+    margin-top: 15px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: var(--muted);
+    transition:
+        color 0.2s ease,
+        opacity 0.2s ease;
+
+}
+
+.message.success {
+    color: var(--success);
+}
+
+.message.error {
+    color: var(--danger);
+}

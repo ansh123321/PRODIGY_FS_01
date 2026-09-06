@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Secure Authentication</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- Authentication Area -->
+        <section class="auth-section">
+
+            <div class="brand">
+                <span class="brand-icon">◆</span>
+                <span>SecureAuth</span>
+            </div>
+
+            <div class="auth-header">
+                <p class="eyebrow">SECURE ACCESS</p>
+                <h1>Welcome back.</h1>
+                <p>
+                    Create an account or sign in to continue.
+                </p>
+            </div>
+
+
+            <!-- Register -->
+            <section class="card auth-card">
+
+                <h2>Create account</h2>
+
+                <p class="card-description">
+                    Start with a secure account.
+                </p>
+
+                <form id="registrationForm">
+
+                    <label for="registrationName">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="registrationName"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+
+                    <label for="registrationEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="registrationEmail"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+
+                    <label for="registrationPassword">
+                        Password
+                    </label>
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="registrationPassword"
+                            placeholder="Minimum 8 characters"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            data-target="registrationPassword"
+                            aria-label="Show password"
+                        >
+                            <span class="eye-icon"></span>
+                        </button>
+
+                    </div>
+
+
+                    <label for="registrationConfirmPassword">
+                        Confirm password
+                    </label>
+                    
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="registrationConfirmPassword"
+                            placeholder="Re-enter your password"
+                            required
+                        >
+
+                        <button 
+                            type="button"
+                            class="password-toggle"
+                            data-target="registrationConfirmPassword"
+                            aria-label="Show password"
+                        >
+                            <span class="eye-icon"></span>
+                        </button>
+
+                    </div>
+
+                    <button type="submit">
+                        Create account
+                    </button>
+
+                </form>
+
+                <p id="registrationMessage" class="message"></p>
+
+            </section>
+
+
+            <!-- Login -->
+            <section class="card auth-card">
+
+                <h2>Sign in</h2>
+
+                <p class="card-description">
+                    Already have an account?
+                </p>
+
+                <form id="loginForm">
+
+                    <label for="loginEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+
+                    <label for="loginPassword">
+                        Password
+                    </label>
+
+                    <div class="password-wrapper">
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                        <button 
+                            type="button"
+                            class="password-toggle"
+                            data-target="loginPassword"
+                            aria-label="Show password"
+                        >
+                            <span class="eye-icon"></span>
+                        </button>
+                    </div>
+
+                    <button type="submit">
+                        Sign in
+                    </button>
+
+                </form>
+
+                <p id="loginMessage" class="message"></p>
+
+            </section>
+
+        </section>
+
+
+        <!-- Profile Area -->
+        <section class="profile-section">
+
+            <div class="profile-card">
+
+                <div class="profile-top">
+
+                    <div class="avatar" id="profileAvatar">
+                        U
+                    </div>
+
+                    <div>
+                        <p class="eyebrow">AUTHENTICATED</p>
+                        <h2>Your Profile</h2>
+                    </div>
+
+                </div>
+
+
+                <p class="profile-description">
+                    Your protected account information.
+                </p>
+
+
+                <div class="profile-details">
+
+                    <div class="profile-field">
+
+                        <span class="field-label">
+                            NAME
+                        </span>
+
+                        <span class="field-value" id="profileName">
+                            —
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-field">
+
+                        <span class="field-label">
+                            EMAIL
+                        </span>
+
+                        <span class="field-value" id="profileEmail">
+                            —
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="session-status">
+
+                    <span class="status-dot"></span>
+
+                    <span>
+                        Session active
+                    </span>
+
+                </div>
+
+
+                <div class="profile-actions">
+
+                    <button type="button" id="profileButton">
+                        Refresh Profile
+                    </button>
+
+                    <button type="button" id="logoutButton">
+                        Logout
+                    </button>
+
+                </div>
+
+
+                <pre id="profileResult"></pre>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
